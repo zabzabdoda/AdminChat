@@ -1,0 +1,31 @@
+name: AdminChat
+main: me.zabzabdoda.AdminChat.AdminChat
+version: 1.0
+api-version: 1.15
+author: zabzabdoda
+description: AdminChat plugin
+commands:
+  chat:
+    description: Main command for chat.
+    usage: |
+           /chat <admin|global>
+           Example: /chat admin - puts you in admin chat.
+  broadcast:
+    description: Broadcasts a message server wide.
+    usage: |
+           /broadcast "message"
+           Example: /broadcast "Hi" - prints Hi to everyone.
+permissions:
+    chat.*:
+        description: Gives access to chat room commands
+        children:
+            chat.switch: true
+    chat.admin:
+        description: Allows you to talk in the admin chat
+        default: op
+    chat.global:
+        description: Allows you to talk in global chat
+        default: true
+    chat.broadcast:
+        description: Allows you to broadcast messages
+        default: op
